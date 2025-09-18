@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="uk" />
+    <title>Квітковий магазин</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/header.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/category.css" />
+    <link rel="stylesheet" href="./src/styles/card.css" />
+    <link rel="stylesheet" href="./src/styles/footer.css" />
+    <link rel="stylesheet" href="./src/styles/responsive.css" />
+  </head>
+  <body>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+            labore, omnis sit vero quia exercitationem nostrum accusantium quis
+            consectetur quaerat, dignissimos natus voluptatibus perspiciatis
+            pariatur blanditiis quas vel amet ex.
+          </p>
+        </div>
+        <div class="hero-img">
+          <img src="./public/planthero.png" alt="" />
+        </div>
+      </section>
+      <div class="container">
+        <!-- КАТАЛОГ -->
+        <section class="product-category">
+          <h2>Асортимент нашого розсадника</h2>
+          <div class="category-grid">
+            <div class="category-grid-item">
+              <a href="catalog.html?category=strawberry" class="category-card">
+                <img src="./public/strawberry.jpg" alt="Полуниця" />
+                <div class="photo-overlay"></div>
+                <h3>Полуниця</h3>
+              </a>
+            </div>
+
+            <div class="category-grid-item">
+              <a href="catalog.html?category=grapes" class="category-card">
+                <img src="./public/grapes-category.jpg" alt="Виноград" />
+                <div class="photo-overlay"></div>
+                <h3>Виноград</h3>
+              </a>
+            </div>
+
+            <div class="category-grid-item">
+              <a href="catalog.html?category=raspberry" class="category-card">
+                <img src="./public/raspberry-category.jpg" alt="Малина" />
+                <div class="photo-overlay"></div>
+                <h3>Малина</h3>
+              </a>
+            </div>
+            <div class="category-grid-item">
+              <a href="catalog.html?category=currant" class="category-card">
+                <img src="./public/currant-category.jpg" alt="Смородина" />
+                <div class="photo-overlay"></div>
+                <h3>Смородина</h3>
+              </a>
+            </div>
+            <div class="category-grid-item">
+              <a href="catalog.html?category=blackberry" class="category-card">
+                <img src="./public/blackberry-category.jpg" alt="Ожина" />
+                <div class="photo-overlay"></div>
+                <h3>Ожина</h3>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="prev-catalog" id="catalog">
+          <h2 class="catalog-title">Каталог</h2>
+          <div class="catalog-grid">
+            <article
+              class="card"
+              data-title="Green Leafed Plant"
+              data-price="120"
+              data-img="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+            >
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="card"
+              data-title="Green Leafed Plant1"
+              data-price="120"
+              data-img="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            >
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="card"
+              data-title="Green Leafed Plant2"
+              data-price="120"
+              data-img="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+            >
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </article>
+            <article
+              class="card"
+              data-title="Green Leafed Plant3"
+              data-price="120"
+              data-img="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+            >
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="card"
+              data-title="Green Leafed Plant4"
+              data-price="120"
+              data-img="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+            >
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="card"
+              data-title="Green Leafed Plant5"
+              data-price="120"
+              data-img="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+            >
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="catalog-btn">
+            <a href="catalog.html">Переглянути каталог</a>
+          </div>
+        </section>
+        <!-- ПРО НАС -->
+        <section id="about" class="about">
+          <h2>Про нас</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            distinctio qui minima mollitia quisquam aliquid facilis eius. Ipsam,
+            et facere dolores officiis mollitia modi ex officia nostrum ea
+            exercitationem id.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

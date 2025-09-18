@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="uk" />
+    <title>Квітковий магазин</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/catalog.css" />
+    <link rel="stylesheet" href="./src/styles/category.css" />
+    <link rel="stylesheet" href="./src/styles/card.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero-catalog">
+        <div class="hero-text">
+          <h1>Каталог</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </section>
+      <div class="container">
+        <section class="product-category">
+          <h2>Асортимент нашого розсадника</h2>
+          <div class="category-grid">
+            <div class="category-grid-item">
+              <a href="catalog.html?category=strawberry" class="category-card">
+                <img src="./public/strawberry.jpg" alt="Полуниця" />
+                <div class="photo-overlay"></div>
+                <h3>Полуниця</h3>
+              </a>
+            </div>
+
+            <div class="category-grid-item">
+              <a href="catalog.html?category=grapes" class="category-card">
+                <img src="./public/grapes-category.jpg" alt="Виноград" />
+                <div class="photo-overlay"></div>
+                <h3>Виноград</h3>
+              </a>
+            </div>
+
+            <div class="category-grid-item">
+              <a href="catalog.html?category=raspberry" class="category-card">
+                <img src="./public/raspberry-category.jpg" alt="Малина" />
+                <div class="photo-overlay"></div>
+                <h3>Малина</h3>
+              </a>
+            </div>
+            <div class="category-grid-item">
+              <a href="catalog.html?category=currant" class="category-card">
+                <img src="./public/currant-category.jpg" alt="Смородина" />
+                <div class="photo-overlay"></div>
+                <h3>Смородина</h3>
+              </a>
+            </div>
+            <div class="category-grid-item">
+              <a href="catalog.html?category=blackberry" class="category-card">
+                <img src="./public/blackberry-category.jpg" alt="Ожина" />
+                <div class="photo-overlay"></div>
+                <h3>Ожина</h3>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="catalog container">
+          <h2 class="active-category-title"></h2>
+          <div class="catalog-grid">
+            <div class="card" data-category="strawberry">
+              <div class="media">
+                <img
+                  src="https://lyudmila-sad.com/sites/default/files/styles/product_big/public/product_media/tempimagevy2135.png?itok=-z1JCUds"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Полуниця Мальвіна (касета 77шт.) пізня
+                </h3>
+                <div class="row">
+                  <span class="price">1 100 грн</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card" data-category="strawberry">
+              <div class="media">
+                <img
+                  src="https://lyudmila-sad.com/sites/default/files/styles/product_big/public/product_media/tempimageszqhms.png?itok=gONmNVnY"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Рання Дарселект (77 шт-касета)</h3>
+                <div class="row">
+                  <span class="price">1 100 грн</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card" data-category="strawberry">
+              <div class="media">
+                <img
+                  src="https://lyudmila-sad.com/sites/default/files/styles/product_big/public/product_media/sazhentsy-klubnyky-azyia-50102633932839.jpg?itok=_B9qgALN"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  Полуниця Азія (касета 77 шт) середньо-рання
+                </h3>
+                <div class="row">
+                  <span class="price">1 100 грн</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn add-to-cart">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="media">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
+                  alt=""
+                />
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Green Leafed Plant</h3>
+                <div class="row">
+                  <span class="price">120$</span>
+                  <button class="card-btn">Додати в кошик</button>
+                  <button class="card-btn">Дізнатися більше</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <a href="#" class="page prev">«</a>
+            <a href="#" class="page active">1</a>
+            <a href="#" class="page">2</a>
+            <a href="#" class="page">3</a>
+            <a href="#" class="page next">»</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

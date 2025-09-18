@@ -1,0 +1,234 @@
+/* МОДАЛЬНЕ ВІКНО КОШИКА */
+.cart-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.cart-modal.active {
+  display: flex;
+}
+.cart-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.cart-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.cart-items {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cart-item-title {
+  flex: 1;
+  font-weight: 600;
+}
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.checkout-btn {
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.card-btn.added {
+  background: coral;
+  color: #fff;
+}
+/* ===== HEADER ===== */
+
+.site-header {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 5px 30px;
+}
+
+.top-header {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #f1f1e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+.top-header .socials {
+  display: flex;
+  gap: 25px;
+  font-size: 30px;
+}
+
+.top-header .contact a,
+.top-header .socials a {
+  color: #f1f1e9;
+}
+.top-header .contact a:hover {
+  color: var(--accent-2);
+}
+.top-header .socials a:hover {
+  color: var(--accent);
+}
+
+.bottom-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.logo-icon {
+  color: var(--accent);
+  font-size: 36px;
+}
+
+.logo-title {
+  text-transform: capitalize;
+  color: var(--accent);
+  margin: 0;
+}
+/* Навігація */
+.header-nav {
+  display: flex;
+}
+.header-nav ul {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav ul li a {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 20px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.header-nav ul li a:hover {
+  color: var(--accent-2);
+}
+
+.header-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* бургер */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #145426;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Анімація бургер → хрестик */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+.basket-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.basket-button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

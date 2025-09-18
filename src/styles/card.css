@@ -1,0 +1,67 @@
+.card {
+  background-color: #f1f1e9;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.media {
+  background: #eef3f0;
+}
+
+.media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent);
+}
+
+.card .row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.card .price {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.card-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #f1f1e9;
+  padding: 7px 10px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+}
+
+.catalog-btn {
+  margin-top: 25px;
+  text-align: center;
+}

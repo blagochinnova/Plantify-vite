@@ -16,5 +16,3 @@ fetch("/src/components/footer.html")
   .then((html) => {
     document.body.insertAdjacentHTML("beforeend", html);
   });
-
-// Ініціалізація кошика

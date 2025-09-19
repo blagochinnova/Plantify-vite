@@ -15,9 +15,7 @@
   color: var(--muted);
 }
 /* CATALOG GRID */
-.catalog {
-  padding: 40px 0;
-}
+
 .catalog .catalog-grid {
   display: grid;
   gap: 20px;

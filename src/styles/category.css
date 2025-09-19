@@ -2,7 +2,8 @@
 .product-category {
   padding: 40px 0;
 }
-.product-category h2 {
+.product-category h2,
+.active-category-title {
   text-align: center;
   color: var(--accent);
   font-size: clamp(1.2rem, 5vw, 2rem);
@@ -42,6 +43,24 @@
   color: #f1f1e9;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+/* SHOW ALL BTN */
+.show-all-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #f1f1e9;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  margin-bottom: 30px;
+}
+.show-all-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 /* RESPONSIVE CATALOG GRID */
 @media (max-width: 599px) {

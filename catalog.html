@@ -10,11 +10,27 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/headerCard.css" />
     <link rel="stylesheet" href="./src/styles/catalog.css" />
     <link rel="stylesheet" href="./src/styles/category.css" />
     <link rel="stylesheet" href="./src/styles/card.css" />
   </head>
   <body>
+    <header class="catalog-header">
+      <div class="catalog-header-row">
+        <!-- Контакт -->
+        <a href="tel:+380970408988" class="contact-link">+380 97 040 89 88</a>
+        <!-- Логотип -->
+        <a href="/index.html" class="logo">
+          <i class="fa-solid fa-seedling logo-icon"></i>
+          <span class="logo-title">Plantify</span>
+        </a>
+        <!-- Кошик -->
+        <a href="./src/components/basket.html" class="basket-button"
+          ><i class="fa-solid fa-shopping-basket"></i> <span>Кошик</span></a
+        >
+      </div>
+    </header>
     <main>
       <section class="hero-catalog">
         <div class="hero-text">
@@ -66,168 +82,24 @@
           </div>
         </section>
         <section class="catalog container">
-          <h2 class="active-category-title"></h2>
-          <div class="catalog-grid">
-            <div class="card" data-category="strawberry">
-              <div class="media">
-                <img
-                  src="https://lyudmila-sad.com/sites/default/files/styles/product_big/public/product_media/tempimagevy2135.png?itok=-z1JCUds"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Полуниця Мальвіна (касета 77шт.) пізня
-                </h3>
-                <div class="row">
-                  <span class="price">1 100 грн</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card" data-category="strawberry">
-              <div class="media">
-                <img
-                  src="https://lyudmila-sad.com/sites/default/files/styles/product_big/public/product_media/tempimageszqhms.png?itok=gONmNVnY"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Рання Дарселект (77 шт-касета)</h3>
-                <div class="row">
-                  <span class="price">1 100 грн</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card" data-category="strawberry">
-              <div class="media">
-                <img
-                  src="https://lyudmila-sad.com/sites/default/files/styles/product_big/public/product_media/sazhentsy-klubnyky-azyia-50102633932839.jpg?itok=_B9qgALN"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Полуниця Азія (касета 77 шт) середньо-рання
-                </h3>
-                <div class="row">
-                  <span class="price">1 100 грн</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="media">
-                <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Green Leafed Plant</h3>
-                <div class="row">
-                  <span class="price">120$</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="media">
-                <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Green Leafed Plant</h3>
-                <div class="row">
-                  <span class="price">120$</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="media">
-                <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Green Leafed Plant</h3>
-                <div class="row">
-                  <span class="price">120$</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="media">
-                <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Green Leafed Plant</h3>
-                <div class="row">
-                  <span class="price">120$</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="media">
-                <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Green Leafed Plant</h3>
-                <div class="row">
-                  <span class="price">120$</span>
-                  <button class="card-btn add-to-cart">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="media">
-                <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop"
-                  alt=""
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Green Leafed Plant</h3>
-                <div class="row">
-                  <span class="price">120$</span>
-                  <button class="card-btn">Додати в кошик</button>
-                  <button class="card-btn">Дізнатися більше</button>
-                </div>
-              </div>
-            </div>
+          <div class="catalog-controls">
+            <button id="show-all" class="show-all-btn" style="display: none">
+              Показати всі товари
+            </button>
           </div>
+          <h2 class="active-category-title"></h2>
+          <div class="catalog-grid"></div>
 
-          <div class="pagination">
+          <!-- <div class="pagination">
             <a href="#" class="page prev">«</a>
             <a href="#" class="page active">1</a>
             <a href="#" class="page">2</a>
             <a href="#" class="page">3</a>
             <a href="#" class="page next">»</a>
-          </div>
+          </div> -->
         </section>
       </div>
     </main>
-    <script src="./script.js"></script>
+    <script type="module" src="./src/catalog.js"></script>
   </body>
 </html>

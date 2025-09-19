@@ -1,0 +1,51 @@
+[
+  {
+    "id": "malvina",
+    "name": "Полуниця Мальвіна",
+    "description": "Полуниця Мальвіна (касета 77шт.) пізня",
+    "price": 1100,
+    "image": "/images/products/strawberry-malvina.png",
+    "images": [
+      "/images/products/strawberry-malvina1.png",
+      "/images/products/strawberry-malvina2.png",
+      "/images/products/strawberry-malvina3.png"
+    ],
+    "category": "strawberry"
+  },
+  {
+    "id": "asia",
+    "name": "Полуниця Азія",
+    "description": "Середньо-рання, касета 77шт.",
+    "price": 1100,
+    "image": "/images/products/strawberry-asia.jpg",
+    "images": [
+      "/images/products/strawberry-asia1.jpg",
+      "/images/products/strawberry-asia2.jpg"
+    ],
+    "category": "strawberry"
+  },
+  {
+    "id": "yupiter",
+    "name": "Виноград Юпітер (Кишмиш)",
+    "description": "Aмериканський безнасінний сорт раннього терміну дозрівання",
+    "price": 170,
+    "image": "/images/products/grapes-yupiter.jpg",
+    "images": [
+      "/images/products/grapes-yupiter1.jpg",
+      "/images/products/grapes-yupiter2.jpg"
+    ],
+    "category": "grapes"
+  },
+  {
+    "id": "rovada",
+    "name": "Смородина червона Ровада (порічка)",
+    "description": "Пізньостиглий сорт червоної смородини нідерландської селекції",
+    "price": 170,
+    "image": "/images/products/currant-rovada.jpg",
+    "images": [
+      "/images/products/currant-rovada1.jpg",
+      "/images/products/currant-rovada2.jpg"
+    ],
+    "category": "currant"
+  }
+]

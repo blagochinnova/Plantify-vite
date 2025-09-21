@@ -7,6 +7,7 @@ export default defineConfig({
         main: "index.html",
         catalog: "catalog.html",
         product: "product.html",
+        basket: "basket.html",
       },
     },
   },

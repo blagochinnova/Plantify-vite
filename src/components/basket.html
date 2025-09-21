@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик | Plantify</title>
+    <link rel="stylesheet" href="./src/style/basket.css">
+    <link rel="stylesheet" href="/src/styles/footer.css">
+    <link rel="stylesheet" href="/src/styles/headerCard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <main class="basket-main">
+        <section class="basket-container">
+            <h1>Ваш кошик</h1>
+            <div id="basket-items" class="basket-items"></div>
+
+            <div class="basket-summary">
+                <p>Загальна сума: <span id="basket-total"></span></p>
+                <div class="basket-actions">
+                    <a href="/catalog.html" class="back-btn">← Повернутися до покупок</a>
+                    <button id="checkout-btn" class="checkout-btn">Оформити замовлення</button>
+                </div>
+            </div>
+            <form id="order-form" class="order-form" style="display: none;">
+            <h2>Оформити замовлення</h2>
+            <input type="text" placeholder="Ім'я" required>
+            <input type="text" placeholder="Прізвище" required>
+            <input type="tel" placeholder="Телефон" required>
+            <input type="email" placeholder="Email">
+
+            <h2>Доставка</h2>
+            <select  id="delivery-service" required>
+                <option value="">Оберіть службу</option>
+                <option value="nova">Нова пошта</option>
+                <option value="ukr">Укрпошта</option>
+            </select>
+            <select  id="region-select" required></select>
+            <select  id="city-select" required></select>
+            <h2>Підсумок</h2>
+            <div id="order-summary"></div>
+            <button type="submit">Оформити замовлення</button>
+        </form>
+        </section>
+    </main>
+    <script type="module" src="/src/js/basket.js"></script>
+</body>
+</html>

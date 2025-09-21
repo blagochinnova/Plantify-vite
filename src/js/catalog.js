@@ -1,10 +1,14 @@
-import { renderCard } from "./components/card.js";
+import { loadHeaderAuto, loadFooter } from "./layout.js";
+import { renderCard } from "./card.js";
 
-//Для отримання параметрів з URL, ?category=strawberry
+loadHeaderAuto();
+loadFooter();
+
+// Отримуємо параметри з URL
 const params = new URLSearchParams(window.location.search);
-const category = params.get("category"); //Витягнути значення категорії
+const category = params.get("category");
 
-//Мапа для відображення назв категорії
+// Мапа назв категорій
 const titleMap = {
   strawberry: "Полуниця",
   grapes: "Виноград",
@@ -13,6 +17,7 @@ const titleMap = {
   blackberry: "Ожина",
 };
 
+// Завантаження товарів
 fetch("products.json")
   .then((res) => res.json())
   .then((products) => {
@@ -20,35 +25,33 @@ fetch("products.json")
     const activeTitle = document.querySelector(".active-category-title");
     const showAllBtn = document.getElementById("show-all");
 
-    // Фільтруємо товари за категорією, якщо вона є
+    if (!container) return;
+
     const filtered = category
       ? products.filter((p) => p.category === category)
       : products;
 
-    // Оновлюємо заголовок категорії
     if (category && activeTitle) {
       activeTitle.textContent = `Категорія: ${titleMap[category] || category}`;
     }
 
-    // Показуємо кнопку "Всі товари", якщо є категорія
     if (category && showAllBtn) {
       showAllBtn.style.display = "inline-block";
       showAllBtn.addEventListener("click", () => {
         activeTitle.textContent = "Всі товари";
         history.replaceState(null, "", "catalog.html");
         showAllBtn.style.display = "none";
-
-        container.innerHTML = "";
-        products.forEach((product) => {
-          const card = renderCard(product);
-          container.appendChild(card);
-        });
+        renderCatalog(products);
       });
     }
 
-    // Рендеримо картки товарів
-    filtered.forEach((product) => {
-      const card = renderCard(product);
-      container.appendChild(card);
-    });
+    renderCatalog(filtered);
+
+    function renderCatalog(list) {
+      container.innerHTML = "";
+      list.forEach((product) => {
+        const card = renderCard(product);
+        container.appendChild(card);
+      });
+    }
   });

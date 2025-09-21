@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./src/styles/headerCard.css" />
     <link rel="stylesheet" href="./src/styles/product.css" />
     <link rel="stylesheet" href="./src/styles/style.css" />
@@ -12,6 +13,11 @@
   </head>
   <body>
     <main class="product-page">
+      <div class="back-button-wrapper">
+        <a href="catalog.html" class="back-to-catalog-top">
+          <i class="fa-solid fa-arrow-left"></i> Повернутися до каталогу
+        </a>
+      </div>
       <section class="product-main">
         <div class="product-image-block">
           <img id="product-image" alt="" />
@@ -39,6 +45,16 @@
         <p id="product-description"></p>
       </section>
     </main>
-    <script type="module" src="./src/product.js"></script>
+    <div id="cart-modal" class="modal hidden">
+      <div class="modal-content">
+        <p>✅ Товар додано в кошик!</p>
+        <div class="modal-buttons">
+          <button id="go-catalog">Повернутися до каталогу</button>
+          <button id="go-checkout">Перейти до оплати</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/js/product.js"></script>
   </body>
 </html>

@@ -1,16 +1,12 @@
 export function loadHeaderAuto() {
   const path = window.location.pathname;
 
-  let type = "home";
-  if (path.includes("catalog")) type = "catalog";
-  else if (path.includes("product")) type = "product";
-  else if (path.includes("basket")) type = "basket";
+  const isHome = path.endsWith("index.html") || path === "/";
+  const type = isHome ? "home" : "shop";
 
   const headerClass = {
     home: "site-header",
-    catalog: "catalog-header",
-    product: "product-header",
-    basket: "basket-header",
+    shop: "shop-header",
   }[type];
 
   if (!document.querySelector(`.${headerClass}`)) {
@@ -23,7 +19,7 @@ export function loadHeaderAuto() {
         }
         document.body.insertAdjacentHTML("afterbegin", html);
         document.body.classList.add("with-header");
-        initBasket();
+        updateBasketCount();
       });
   }
 }

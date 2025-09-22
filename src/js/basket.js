@@ -1,23 +1,24 @@
+// Імпорт хедера, футера і логіку доставки
 import { loadHeaderAuto, loadFooter } from "./layout.js";
 import { setupDeliverySelectors } from "./delivery-ui.js";
 
 loadHeaderAuto();
 loadFooter();
-
+//  DOM - елементи
 const basketItemsContainer = document.getElementById("basket-items");
 const basketTotal = document.getElementById("basket-total");
 const checkoutBtn = document.getElementById("checkout-btn");
 const checkoutForm = document.getElementById("order-form");
 const summaryContainer = document.getElementById("order-summary");
 
-// 🔢 Лічильник у хедері
+//  Лічильник у хедері
 function updateBasketCount() {
   const basket = JSON.parse(localStorage.getItem("basket")) || [];
   const count = basket.reduce((sum, item) => sum + item.quantity, 0);
   const countEl = document.getElementById("basket-count");
   if (countEl) countEl.textContent = count;
 }
-
+//  Рендер кошика
 function renderBasket() {
   const basket = JSON.parse(localStorage.getItem("basket")) || [];
 
@@ -36,9 +37,9 @@ function renderBasket() {
       total += itemTotal;
       return `
         <div class="basket-item">
-          <img src="${item.img}" alt="${item.title}" />
+          <img src="${item.image}" alt="${item.name}" />
           <div class="basket-info">
-            <h3>${item.title}</h3>
+            <h3>${item.name}</h3>
             <p>Кількість: ${item.quantity}</p>
             <p>Ціна: ${item.price}₴</p>
             <p>Сума: ${itemTotal}₴</p>
@@ -53,7 +54,7 @@ function renderBasket() {
   renderOrderSummary(basket);
   updateBasketCount();
 }
-
+// Підсумок замовлення
 function renderOrderSummary(basket) {
   let total = 0;
   summaryContainer.innerHTML = basket
@@ -62,9 +63,9 @@ function renderOrderSummary(basket) {
       total += itemTotal;
       return `
         <div class="summary-item">
-          <img src="${item.img}" alt="${item.title}" />
+          <img src="${item.image}" alt="${item.name}" />
           <div class="summary-info">
-            <h3>${item.title}</h3>
+            <h3>${item.name}</h3>
             <p>Кількість: ${item.quantity}</p>
             <p>Ціна: ${item.price}₴</p>
             <p>Сума: ${itemTotal}₴</p>
@@ -76,7 +77,7 @@ function renderOrderSummary(basket) {
 
   summaryContainer.innerHTML += `<div class="summary-total"><strong>Загальна сума: ${total}₴</strong></div>`;
 }
-
+// Видалення товару з кошика
 basketItemsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove-btn")) {
     const id = e.target.dataset.id;
@@ -86,7 +87,7 @@ basketItemsContainer.addEventListener("click", (e) => {
     renderBasket();
   }
 });
-
+// ВІдкриття форми оформлення
 checkoutBtn.addEventListener("click", () => {
   checkoutForm.style.display = "block";
   setupDeliverySelectors();

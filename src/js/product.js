@@ -1,19 +1,8 @@
-// 🔹 Вставка хедера
-fetch("/src/components/header-catalog.html")
-  .then((res) => res.text())
-  .then((html) => {
-    document.body.insertAdjacentHTML("afterbegin", html);
-    initCart();
-  });
+import { loadHeaderAuto, loadFooter } from "./layout.js";
 
-// 🔹 Вставка футера
-fetch("/src/components/footer.html")
-  .then((res) => res.text())
-  .then((html) => {
-    document.body.insertAdjacentHTML("beforeend", html);
-  });
-
-// 🔹 Ініціалізація кошика
+loadHeaderAuto();
+loadFooter();
+// Ініціалізація кошика
 function initCart() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -21,11 +10,11 @@ function initCart() {
   if (cartCountEl) cartCountEl.textContent = count;
 }
 
-// 🔹 Отримуємо ID товару з URL
+// Отримуємо ID товару з URL
 const params = new URLSearchParams(location.search);
 const productId = params.get("id");
 
-// 🔹 DOM-елементи
+//  DOM-елементи
 const titleEl = document.getElementById("product-title");
 const imageEl = document.getElementById("product-image");
 const descriptionEl = document.getElementById("product-description");
@@ -43,14 +32,14 @@ let quantity = 1;
 let currentIndex = 0;
 let originalIndex = 0;
 
-// 🔹 Завантаження товару
+//  Завантаження товару
 fetch("/products.json")
   .then((res) => res.json())
   .then((products) => {
     const product = products.find((p) => p.id === productId);
     if (!product) return;
 
-    // 🔸 Заповнення даних
+    //  Заповнення даних
     titleEl.textContent = product.name;
     imageEl.src = product.image;
     imageEl.alt = product.name;
@@ -58,7 +47,7 @@ fetch("/products.json")
     priceEl.textContent = `${product.price} грн`;
     stateEl.textContent = product.state || "";
 
-    // 🔸 Карусель зображень (включає головне фото)
+    //  Карусель зображень (включає головне фото)
     const allImages = [product.image, ...(product.images || [])];
 
     allImages.forEach((src, index) => {

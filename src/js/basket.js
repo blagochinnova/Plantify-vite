@@ -13,25 +13,25 @@ const summaryContainer = document.getElementById("order-summary");
 
 //  Лічильник у хедері
 function updateBasketCount() {
-  const basket = JSON.parse(localStorage.getItem("basket")) || [];
-  const count = basket.reduce((sum, item) => sum + item.quantity, 0);
-  const countEl = document.getElementById("basket-count");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const countEl = document.getElementById("cart-count");
   if (countEl) countEl.textContent = count;
 }
 //  Рендер кошика
-function renderBasket() {
-  const basket = JSON.parse(localStorage.getItem("basket")) || [];
+function renderCart() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  if (basket.length === 0) {
+  if (cart.length === 0) {
     basketItemsContainer.innerHTML = "<p>Кошик порожній.</p>";
     basketTotal.textContent = "0₴";
     summaryContainer.innerHTML = "";
-    updateBasketCount();
+    updateCartCount();
     return;
   }
 
   let total = 0;
-  basketItemsContainer.innerHTML = basket
+  basketItemsContainer.innerHTML = cart
     .map((item) => {
       const itemTotal = item.price * item.quantity;
       total += itemTotal;
@@ -55,9 +55,9 @@ function renderBasket() {
   updateBasketCount();
 }
 // Підсумок замовлення
-function renderOrderSummary(basket) {
+function renderOrderSummary(cart) {
   let total = 0;
-  summaryContainer.innerHTML = basket
+  summaryContainer.innerHTML = cart
     .map((item) => {
       const itemTotal = item.price * item.quantity;
       total += itemTotal;
@@ -81,10 +81,10 @@ function renderOrderSummary(basket) {
 basketItemsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove-btn")) {
     const id = e.target.dataset.id;
-    let basket = JSON.parse(localStorage.getItem("basket")) || [];
-    basket = basket.filter((item) => item.id !== id);
-    localStorage.setItem("basket", JSON.stringify(basket));
-    renderBasket();
+    let basket = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter((item) => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(basket));
+    renderCart();
   }
 });
 // ВІдкриття форми оформлення
@@ -93,4 +93,4 @@ checkoutBtn.addEventListener("click", () => {
   setupDeliverySelectors();
 });
 
-renderBasket();
+renderCart();

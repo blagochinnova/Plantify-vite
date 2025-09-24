@@ -99,7 +99,7 @@ fetch("/products.json")
       });
     }
 
-    // 🔸 Кількість
+    //  Кількість
     document.getElementById("increase").addEventListener("click", () => {
       quantity++;
       quantityEl.textContent = quantity;
@@ -112,7 +112,7 @@ fetch("/products.json")
       }
     });
 
-    // 🔸 Додати в кошик
+    //  Додати в кошик
     document.getElementById("add-to-cart").addEventListener("click", () => {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
       const existing = cart.find((item) => item.id === product.id);

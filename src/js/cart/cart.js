@@ -1,6 +1,6 @@
 // Імпорт хедера, футера і логіку доставки
-import { loadHeaderAuto, loadFooter } from "./layout.js";
-import { setupDeliverySelectors } from "./delivery-ui.js";
+import { loadHeaderAuto, loadFooter } from "../layout.js";
+import { setupDeliverySelectors } from "../delivery-ui.js";
 
 loadHeaderAuto();
 loadFooter();

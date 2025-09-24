@@ -1,48 +1,102 @@
-// Імпорт ф-ції, яка оновлює лічильник товарів у кошику
-import { updateBasketCount } from "./layout.js";
+import { renderHeaderShop } from "../components/HeaderShop.js";
+import { renderFooter } from "../components/Footer.js";
+import { setupDeliverySelectors } from "../delivery-ui.js";
+import { updateCartCount, getCart, saveCart } from "../cart/cart-utils.js";
 
-// Створення HTML-картки товару
-export function renderCard(product) {
-  const card = document.createElement("article");
-  card.className = "card";
-  card.dataset.category = product.category;
+// Рендер хедеру і футера
+renderHeaderShop();
+renderFooter();
 
-  card.innerHTML = `
-    <div class="media">
-      <img src="${product.image}" alt="${product.name}" />
-    </div>
-    <div class="card-body">
-      <h3 class="card-title">${product.name}</h3>
-      <div class="row">
-        <span class="price">${product.price} грн</span>
-        <button class="card-btn add-to-basket" data-id="${product.id}">Додати в кошик</button>
-        <button class="card-btn more-btn" data-id="${product.id}">Дізнатися більше</button>
-      </div>
+// DOM-елементи
+const basketItemsContainer = document.getElementById("basket-items");
+const basketTotal = document.getElementById("basket-total");
+const checkoutBtn = document.getElementById("checkout-btn");
+const checkoutForm = document.getElementById("order-form");
+const summaryContainer = document.getElementById("order-summary");
+
+// Рендер кошика
+function renderCart() {
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    basketItemsContainer.innerHTML = "<p>Кошик порожній.</p>";
+    basketTotal.textContent = "0₴";
+    summaryContainer.innerHTML = "";
+    updateCartCount();
+    return;
+  }
+
+  let total = 0;
+
+  basketItemsContainer.innerHTML = cart
+    .map((item) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+      return `
+        <div class="basket-item">
+          <img src="${item.image}" alt="${item.name}" />
+          <div class="basket-info">
+            <h3>${item.name}</h3>
+            <p>Кількість: ${item.quantity}</p>
+            <p>Ціна: ${item.price}₴</p>
+            <p>Сума: ${itemTotal}₴</p>
+            <button class="remove-btn" data-id="${item.id}">Видалити</button>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+
+  basketTotal.textContent = `${total}₴`;
+  renderOrderSummary(cart);
+  updateCartCount();
+}
+
+// Рендер підсумку замовлення
+function renderOrderSummary(cart) {
+  let total = 0;
+
+  summaryContainer.innerHTML = cart
+    .map((item) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+      return `
+        <div class="summary-item">
+          <img src="${item.image}" alt="${item.name}" />
+          <div class="summary-info">
+            <h3>${item.name}</h3>
+            <p>Кількість: ${item.quantity}</p>
+            <p>Ціна: ${item.price}₴</p>
+            <p>Сума: ${itemTotal}₴</p>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+
+  summaryContainer.innerHTML += `
+    <div class="summary-total">
+      <strong>Загальна сума: ${total}₴</strong>
     </div>
   `;
-  // Обробник кнопки "Дізнатися більше" - переход на сторінку товару
-  card.querySelector(".more-btn").addEventListener("click", () => {
-    window.location.href = `product.html?id=${product.id}`;
-  });
-  // Обробник кнопки "Додати в кошик"
-  card.querySelector(".add-to-basket").addEventListener("click", () => {
-    const basket = JSON.parse(localStorage.getItem("basket")) || [];
-
-    // Перевірка товару в кошику
-    const existing = basket.find((item) => item.id === product.id);
-
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      basket.push({ ...product, quantity: 1 });
-    }
-
-    localStorage.setItem("basket", JSON.stringify(basket));
-    updateBasketCount();
-
-    card.querySelector(".add-to-basket").textContent = "В кошику";
-    card.querySelector(".add-to-basket").classList.add("added");
-  });
-
-  return card;
 }
+
+// Видалення товару з кошика
+basketItemsContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove-btn")) {
+    const id = e.target.dataset.id;
+    let cart = getCart();
+    cart = cart.filter((item) => item.id !== id);
+    saveCart(cart);
+    renderCart();
+  }
+});
+
+// Відкриття форми оформлення
+checkoutBtn.addEventListener("click", () => {
+  checkoutForm.style.display = "block";
+  setupDeliverySelectors();
+});
+
+// Ініціалізація
+renderCart();

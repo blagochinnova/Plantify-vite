@@ -3,11 +3,13 @@ export function setupCartModal({ modalId, goCatalogId, goCheckoutId }) {
   const goCatalogBtn = document.getElementById(goCatalogId);
   const goCheckoutBtn = document.getElementById(goCheckoutId);
 
-  if (!modal) return;
-
   // Показати модалку
   function showModal() {
-    modal.classList.remove("hidden");
+    if (modal) {
+      modal.classList.remove("hidden");
+    } else {
+      console.warn(`Модалка з id "${modalId}" не знайдена`);
+    }
   }
 
   // Обробка кнопок

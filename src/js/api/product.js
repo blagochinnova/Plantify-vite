@@ -1,8 +1,8 @@
-import { renderHeaderShop } from "../components/HeaderShop.js";
-import { renderFooter } from "../components/Footer.js";
-import { getProducts } from "../api/products.js";
+// Імпорти
+import { renderHeaderShop } from "../../components/HeaderShop.js";
+import { renderFooter } from "../../components/Footer.js";
 import { addToCart, updateCartCount } from "../cart/cart-utils.js";
-import { setupCartModal } from "../components/CartModal.js";
+import { setupCartModal } from "../../components/CartModal.js";
 
 // Рендер хедеру і футера
 renderHeaderShop();
@@ -33,6 +33,18 @@ const resetImageBtn = document.getElementById("reset-image");
 let quantity = 1;
 let currentIndex = 0;
 let originalIndex = 0;
+
+//  Функція завантаження товарів з products.json
+export async function getProducts() {
+  try {
+    const response = await fetch("/data/products.json");
+    if (!response.ok) throw new Error("Не вдалося завантажити products.json");
+    return await response.json();
+  } catch (err) {
+    console.error("Помилка при завантаженні товарів:", err);
+    return [];
+  }
+}
 
 // Завантаження товару
 getProducts()
